@@ -23,7 +23,8 @@ public class ex6 {
 		retangulo = A*B;
 		
 
-		System.out.printf("TRIANGULO: %.3f %nCIRCULO: %.3f %nTRAPEZIO: %.3f %nQUADRADO: %.3f %nRETANGULO: %.3f", triangulo, circulo, trapezio, quadrado, retangulo);
+		System.out.printf("TRIANGULO: %.3f %nCIRCULO: %.3f %nTRAPEZIO: %.3f %nQUADRADO: %.3f %nRETANGULO: %.3f",
+				triangulo, circulo, trapezio, quadrado, retangulo);
 
 		sc.close();
 
