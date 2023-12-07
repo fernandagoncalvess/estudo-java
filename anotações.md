@@ -5,8 +5,8 @@
 - [Orientação a Objeto](#orientação-a-objeto)
   - [Significados](#significados)
   - [Códigos](#códigos)
-- [Vetor de Objetos](#vetor-de-objetos)
-- 
+  - [Vetor de Objetos](#vetor-de-objetos)
+  - [ArrayList](arraylist)
 <br>
 
 
@@ -31,6 +31,9 @@
   | `public void exemplo(){}`| Método |
   | `Exemplo[] exemplos = new Exemplo[10]` | Criando um vetor de objetos |
   | `this.exemplo` | Referindo-se um atributo da classe |
+  | `@override` | Sobrescrevendo um método da classe mãe |
+  | `extends` | Sinalizando herança |
+  | `super.metodo();` | Chamando um método da superclasse (classe mãe) |
   
   
   
@@ -54,15 +57,19 @@ for(int i=0; i<10; i++){
 
 ### ArrayList
 
-  | Códigos | Significados |
-  |---------|--------------|
-  | `private ArrayList<Exemplo>nomeDaLista`| Criando identificador para o arraylist, tem import |
+  | Códigos Básicos para Array | Significados |
+  |----------------------------|--------------|
+  | `private ArrayList<Exemplo>nomeDaLista`| Criando identificador para o arraylist |
   | `nomeDaLista = new ArrayList<>();` | Criando um array e alocando espaço para ele |
   | `nomeDaLista.add("Elemento");`| Adicionando um elemento no final da lista |
   | `nomeDaLista.add(0, "Elemento");` | Esta adicionando claudia a posição 0 do array |
   | `nomeDaLista.size();` | Tamanho do array |
   | `nomeDaLista.set(0, "Elemento1");` | Substitui o elemento da posição 0 |
   | `nomeDaLista.remove(0);` | Remove o elemento da posição 0 |
+  | `nomeDaLista.contains("Elemento");` | Retorna True se encontrar "Elemento" na lista, caso contrário retorna false |
+  | `nomeDaLista.isEmpty()` | Retorna True se a lista tiver vazia, caso contrário false |
+  | `System.out.println(nomeDaLista.get(1));` | Mostra o elemento da posição 1 |
+  | ``
  
 
 ```
@@ -74,8 +81,20 @@ System.out.println(s);
 
 int indice = nomeDaLista.indexof(nomeDoElementoProcurado);
 
+public void adicionarObjeto(Objeto o){
+  this.nomeDaLista.add(o);
+}
+
 ```
 
+### Método Remover objeto
+
+Esse método depende do equals() para saber quando os dois objetos são iguais.
+
+```
+public void excluir(int posicao){
+this.nomeDaListaExe.remove(posicao); }
+```
 
 
 
