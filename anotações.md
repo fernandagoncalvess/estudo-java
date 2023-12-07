@@ -1,23 +1,80 @@
 <h1 align="center"> Anotações Java </h1>
 
-<p align="center">
-<a href="#"></a>
-<a href="#"></a>
-</p>
-
+## Menu
+- [Significados](#significados)
+- [Vetor de Objetos](#vetor-de-objetos)
+- [Orientação a Objeto](#orientação-a-objeto)
+  - [Significados](#significados)
+  - [Códigos](#códigos)
 <br>
 
-# Códigos básicos
+
+
+
+# Orientação a Objeto
+
+## Significados
+
+## Códigos
+
+  | Códigos Básicos | Significados |
+  |-----------------|--------------|
+  | `Scanner sc = new Scanner(System.in); ` | Ler teclado |
+  | `sc.close();` | Fechando o ler teclado |
+  | `Locale.setDefault(Locale.US);` | Mudar a linguagem do programa |
+  | `System.out.print("Exemplo..." + exemplo);` | Imprime na tela a variável exemplo e pula linha |
+  | `int hora_inicial = sc.nextInt();` | Cria uma variável tipo int e lê um numero inteiro |
+  | `public static void main(String[] args){}` | Execução incial do programa, costuma ficar na classe principal |
+  | `Exemplo ex = new Exemplo();` | Cria um objeto que herda todos os atributos da classe Exemplo |
+  | `ex.lerDados();` | Chamando o método lerDados da classe Exemplo para o objeto ex |
+  | `public void exemplo(){}`| Método |
+  | `Exemplo[] exemplos = new Exemplo[10]` | Criando um vetor de objetos |
+  | `this.exemplo` | Referindo-se um atributo da classe |
+  
+  
+  
+
+
+  ### Vetor de Objetos
+ 
+   ```
+Movel[ ] moveis = new Movel[10];
+
+for(int i=0; i<10; i++){
+    moveis[i] = new Movel();
+    moveis[i].lerDados(); 
+ }
+
+for(int i=0; i<10; i++){
+    moveis[i].apresenterDados();
+}
+
+```
+
+### ArrayList
 
   | Códigos | Significados |
-  |---------------------------------------------|-------------|
-  | ```Scanner sc = new Scanner(System.in); ``` | Ler teclado |
-  |```sc.close();``` | Fechando o ler teclado |
-  | ```Locale.setDefault(Locale.US);``` | Mudar a linguagem do programa |
-  | ```System.out.print("Exemplo..." + exemplo);``` | Imprime na tela a variável exemplo e pula linha |
-  | ```int hora_inicial = sc.nextInt();``` | Cria uma variável tipo int e lê um numero inteiro |
-  | ```public static void main(String[] args){}``` | Execução incial do programa, costuma ficar na classe principal |
-  | ```Exemplo ex = new Exemplo();``` | Cria um objeto que herda todos os atributos da classe Exemplo |
-  | ```ex.lerDados();``` | Chamando o metodo lerDados da classe Exemplo para o objeto ex |
+  |---------|--------------|
+  | `private ArrayList<Exemplo>nomeDaLista`| Criando identificador para o arraylist, tem import |
+  | `nomeDaLista = new ArrayList<>();` | Criando um array e alocando espaço para ele |
+  | `nomeDaLista.add("Elemento");`| Adicionando um elemento no final da lista |
+  | `nomeDaLista.add(0, "Elemento");` | Esta adicionando claudia a posição 0 do array |
+  | `nomeDaLista.size();` | Tamanho do array |
+  | `nomeDaLista.set(0, "Elemento1");` | Substitui o elemento da posição 0 |
+  | `nomeDaLista.remove(0);` | Remove o elemento da posição 0 |
+ 
+
+```
+import java.util.ArrayList;
+
+for(String s : nomeDaListaExe)  {
+System.out.println(s);
+}
+
+int indice = nomeDaLista.indexof(nomeDoElementoProcurado);
+
+```
+
+
 
 
