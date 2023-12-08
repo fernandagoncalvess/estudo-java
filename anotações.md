@@ -6,15 +6,10 @@
   - [Significados](#significados)
   - [Códigos](#códigos)
   - [Vetor de Objetos](#vetor-de-objetos)
-  - [ArrayList](arraylist)
+  - [ArrayList](#arraylist)
 <br>
 
-
-
-
 # Orientação a Objeto
-
-## Significados
 
 ## Códigos
 
@@ -34,28 +29,82 @@
   | `@override` | Sobrescrevendo um método da classe mãe |
   | `extends` | Sinalizando herança |
   | `super.metodo();` | Chamando um método da superclasse (classe mãe) |
-  
-  
-  
+<br>
+<br>
+
+## Significados 
+
+### Classes
+Classes são TAD (Tipo Abstrato de Dados). É uma descrição para um conjunto de objetos do mundo real. Exemplo: Classe Móvel, não é um móvel em si e sim uma especificação dele.
+
+```java
+public class Pesso{
+  private String nome = "Fernanda";
+
+  public String getNome(){
+    return nome;
+  }
+}
+```
+
+### Objeto
+```java
+public class ExemploPessoa{
+  public static void main(String[] args){
+    Pessoa pessoa  = new Pessoa();
+    System.out.print(pessoa.getNome());
+      //Fernanda
+  }
+}
+```
 
 
-  ### Vetor de Objetos
- 
-   ```
-Movel[ ] moveis = new Movel[10];
+### Herança
+Reaproveita classes já criadas, podendo ser modificadas pela herança sem perder a classe mãe.
 
-for(int i=0; i<10; i++){
-    moveis[i] = new Movel();
-    moveis[i].lerDados(); 
+
+### Método Remover objeto
+
+Esse método depende do equals() para saber quando os dois objetos são iguais.
+
+```java
+public void excluir(int posicao){
+  this.nomeDaListaExe.remove(posicao);
+}
+```
+
+### Vetor de Objetos
+
+ Exemplos com um objeto Movel:
+ No método localizaCategoria pode usar `==` ao invés de `equals()`.
+```java
+public class GerenciaMoveis{
+
+  private Movel[ ] moveis = new Movel[10];
+
+  public void cadastrarMoveis(){
+
+    for(int i=0; i<10; i++){
+      moveis[i] = new Movel();
+      moveis[i].lerDados(); 
  }
 
-for(int i=0; i<10; i++){
-    moveis[i].apresenterDados();
+    for(int i=0; i<10; i++){
+      moveis[i].apresenterDados();
+  }
+}
+
+public void localizaCategoria(String categoria){
+   for(int i=0; i<10; i++){
+      if(this.moveis[i].getCategoria().equals(categoria)
+      this.moveis[i].apresentarDados();
+  }
 }
 
 ```
 
 ### ArrayList
+Estrutura de dados que organiza e armazena valores na memória, não tem tamanho predefinido, aumenta conforme adiciona um objeto.
 
   | Códigos Básicos para Array | Significados |
   |----------------------------|--------------|
@@ -69,14 +118,15 @@ for(int i=0; i<10; i++){
   | `nomeDaLista.contains("Elemento");` | Retorna True se encontrar "Elemento" na lista, caso contrário retorna false |
   | `nomeDaLista.isEmpty()` | Retorna True se a lista tiver vazia, caso contrário false |
   | `System.out.println(nomeDaLista.get(1));` | Mostra o elemento da posição 1 |
-  | ``
- 
+ <br>
 
-```
+```java
 import java.util.ArrayList;
 
-for(String s : nomeDaListaExe)  {
-System.out.println(s);
+public void percorrerArrey(Movel m){
+  for(Movel movel : listaMoveis){
+    m.apresentarDaos();
+  }
 }
 
 int indice = nomeDaLista.indexof(nomeDoElementoProcurado);
@@ -87,14 +137,9 @@ public void adicionarObjeto(Objeto o){
 
 ```
 
-### Método Remover objeto
 
-Esse método depende do equals() para saber quando os dois objetos são iguais.
+<a href="#menu"> Voltar ao menu</a>
 
-```
-public void excluir(int posicao){
-this.nomeDaListaExe.remove(posicao); }
-```
 
 
 
