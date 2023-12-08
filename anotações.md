@@ -9,6 +9,17 @@
   - [ArrayList](#arraylist)
 <br>
 
+## Regras na construção de códigos da linguagem Java
+- Todas as letras iniciais dos nomes das classes tem que ser maiúsculo. Exemplo: MinhaClasse;
+- Variáveis devem ser escritas com letras minúsculas, se for palavra composta a segunda palavra deve começar com letra maiúscula. Exemplo: anoFabricado;
+- Usar ponto na variável double;
+- Se a variavel é tipo float, tem q encerrar com um F. Exemplo: float pi = 3.14F;
+- Variável constante tem q ser CAIXA ALTA. Exemplo: final double PI=3.14;
+- Métodos também são escritos com letras minúsculas tirando a primeira letra da segunda palavra. Exemplo: calcularImposto();
+- Nome dos pacotes:
+  - Em caso de trabalho: nome.nomedaempresa.nomedoprojeto
+  - Em caso de estudo: edu.seunome.temadoestudo
+
 # Orientação a Objeto
 
 ## Códigos
@@ -27,9 +38,10 @@
   | `Exemplo[] exemplos = new Exemplo[10]` | Criando um vetor de objetos |
   | `this.exemplo` | Referindo-se um atributo da classe |
   | `@override` | Sobrescrevendo um método da classe mãe |
-  | `extends` | Sinalizando herança |
   | `super.metodo();` | Chamando um método da superclasse (classe mãe) |
+  | `primeiroNome.concat(" ").concat(segundoNome);` | Concatena o primeiro e segundo nome |
 <br>
+
 <br>
 
 ## Significados 
@@ -38,7 +50,7 @@
 Classes são TAD (Tipo Abstrato de Dados). É uma descrição para um conjunto de objetos do mundo real. Exemplo: Classe Móvel, não é um móvel em si e sim uma especificação dele.
 
 ```java
-public class Pesso{
+public class Pessoa{
   private String nome = "Fernanda";
 
   public String getNome(){
@@ -46,6 +58,8 @@ public class Pesso{
   }
 }
 ```
+### Classe abstrata
+Classe mãe que vai ser herdada. Exemplo: Existe a classe Pessoa, Aluno, Professor, ADM. As classes fazem parte de um projeto de registro de funcionários de uma escola. A classe Pessoa nunca será registrada então ela é uma classe abstrata.
 
 ### Objeto
 ```java
@@ -61,6 +75,16 @@ public class ExemploPessoa{
 
 ### Herança
 Reaproveita classes já criadas, podendo ser modificadas pela herança sem perder a classe mãe.
+
+```java
+public class A extends B{
+    //classe B é a classe mãe
+}
+```
+
+
+### Polimorfismo
+O mesmo método se comporta de maneiras diferentes
 
 
 ### Método Remover objeto
