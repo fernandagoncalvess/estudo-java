@@ -7,8 +7,8 @@
   - [Códigos](#códigos)
   - [Vetor de Objetos](#vetor-de-objetos)
   - [ArrayList](#arraylist)
-  - [Persistência de dados](persistência-de-dados)
-  - [JPQL](jpql)
+  - [Persistência de dados](#persistência-de-dados)
+  - [JPQL](#jpql)
 <br>
 
 ## Regras na construção de códigos da linguagem Java
