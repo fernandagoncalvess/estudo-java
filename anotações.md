@@ -7,6 +7,8 @@
   - [Códigos](#códigos)
   - [Vetor de Objetos](#vetor-de-objetos)
   - [ArrayList](#arraylist)
+  - [Persistência de dados](persistência-de-dados)
+  - [JPQL](jpql)
 <br>
 
 ## Regras na construção de códigos da linguagem Java
@@ -167,3 +169,118 @@ public void adicionarObjeto(Objeto o){
 
 
 
+# Persistência de dados
+
+| Modelo relacional|  Modelo OO |
+|------------------|------------|
+| Tabela | Classe |
+| Linha | Objeto |
+| Coluna | Atributo |
+| - | Método |
+| Chave estrangeira | Associação |
+
+
+# Configuração Conexão MySQL
+```xml
+    &amp;useSSL=false
+    &amp;allowPublicKeyRetrieval=true
+    &amp;createDatabaseIfNotExist=true
+    &amp;serverTimezone=UTC
+    &amp;serverTimezone=America/Sao_Paulo
+```
+
+
+### Exemplo uso do EntityManager no main
+
+```java
+public class Principal {
+    
+    
+    public static void main(String[] args) {
+        
+        Pessoa p = new Pessoa("Fernanda");
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("nomeDaConexaoDoBancoDeDados");
+        
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+                
+        em.persist(p);
+        
+        em.getTransaction().commit();
+        
+        em.close();
+        
+    }
+    
+}
+
+```
+
+### Exemplo classe mapeada
+
+```java
+
+@Entity
+@Table(name="pessoa")
+public class Pessoa implements Serializable{
+    
+    @Id
+    @Column(name="codigo")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int codigo;
+    
+    @Column(name = "nome", length = 50, nullable = false)
+    private String nome;
+
+    public Pessoa() {
+    }
+    
+    
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+```
+
+### Uso do find
+
+```java
+     private static void alterar() {
+        EntityManager em = emf.createEntityManager();
+        
+        //Alteração
+        Pessoa p1 = em.find(Pessoa.class, 1);
+        p1.setNome("João");
+
+        em.getTransaction().begin();
+        em.merge(p1);//Altera ou cria
+        em.getTransaction().commit();
+
+        //Fecha a conexao
+        em.close();
+    }
+
+```
+
+## JPQL
+`select * from veiculo` em JPQL fica:
+<br>
+`select v from Veiculo v` 
+<br>
+A sintaxe acima em JPQL significa que queremos buscar os objetos da entidade Veiculo.
+
+```java
+public class ListandoVeiculos {
+public static void main(String[] args) {
+    EntityManager manager = JpaUtil.getEntityManager();
+    Query query = manager.createQuery("select v from Veiculo v");
+    List<Veiculo> veiculos = query.getResultList();
+
+    for (Veiculo veiculo : veiculos) {
+        System.out.println(veiculo.getCodigo() + " - " veiculo.getFabricante() +
+        " " veiculo.getModelo() +
+        ", ano " veiculo.getAnoFabricacao() +
+        "/" veiculo.getAnoModelo() + " por " "R$" + veiculo.getValor());
+
+```
