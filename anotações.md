@@ -181,13 +181,13 @@ public void adicionarObjeto(Objeto o){
 | Chave estrangeira | Associação |
 
 
-# Configuração Conexão MySQL
+### Configuração Conexão MySQL
 ```xml
-    &amp;useSSL=false
-    &amp;allowPublicKeyRetrieval=true
-    &amp;createDatabaseIfNotExist=true
-    &amp;serverTimezone=UTC
-    &amp;serverTimezone=America/Sao_Paulo
+    &useSSL=false
+    &allowPublicKeyRetrieval=true
+    &createDatabaseIfNotExist=true
+    &serverTimezone=UTC
+    &serverTimezone=America/Sao_Paulo
 ```
 
 
@@ -241,7 +241,7 @@ public class Pessoa implements Serializable{
     public Pessoa(String nome) {
         this.nome = nome;
     }
-
+}
 ```
 
 ### Uso do find
