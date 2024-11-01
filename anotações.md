@@ -9,6 +9,7 @@
   - [ArrayList](#arraylist)
   - [Persistência de dados](#persistência-de-dados)
   - [JPQL](#jpql)
+  - [Serialização](#serialização)
 <br>
 
 ## Regras na construção de códigos da linguagem Java
@@ -137,7 +138,7 @@ Estrutura de dados que organiza e armazena valores na memória, não tem tamanho
   | `private ArrayList<Exemplo>nomeDaLista`| Criando identificador para o arraylist |
   | `nomeDaLista = new ArrayList<>();` | Criando um array e alocando espaço para ele |
   | `nomeDaLista.add("Elemento");`| Adicionando um elemento no final da lista |
-  | `nomeDaLista.add(0, "Elemento");` | Esta adicionando claudia a posição 0 do array |
+  | `nomeDaLista.add(0, "Elemento");` | Esta adicionando elemento a posição 0 do array |
   | `nomeDaLista.size();` | Tamanho do array |
   | `nomeDaLista.set(0, "Elemento1");` | Substitui o elemento da posição 0 |
   | `nomeDaLista.remove(0);` | Remove o elemento da posição 0 |
@@ -284,3 +285,20 @@ public static void main(String[] args) {
         "/" veiculo.getAnoModelo() + " por " "R$" + veiculo.getValor());
 
 ```
+
+## Serialização
+Transforma o estado do objeto em uma sequência de bytes, podendo ser gravado em arquivos, persistido ou transmitido pela rede. Mantém os dados além da execução do programa. 
+Para isso é usado o pacote java.io, para indicar que o objeto pode ser serializado.
+
+```java
+import java.io.Serializable;
+
+
+public class Vinho implements Serializable {
+    private String nome;
+    private String tipo;
+     //gets e sets omitidos
+  }
+
+```
+
